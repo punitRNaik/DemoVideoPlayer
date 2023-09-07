@@ -1,0 +1,66 @@
+{
+    "bookURL": "https://drive.google.com/uc?export=downlaod&id=1XaF-Ep8_GNz76ieH4J4DtR8CKgHnc7O3",
+    "bookURL": "https://drive.google.com/u/0/uc?id=16YtGcaTBuVjtZ6LgG36SmhiOWu8AwFTx&export=download",
+    "pages": [
+        {
+            "pageIndex": 0,
+            "startTime": "0.00",
+            "endTime": "13.9"
+        },
+        {
+            "pageIndex": 1,
+            "startTime": "14.0",
+            "endTime": "50.9"
+        },
+        {
+            "pageIndex": 2,
+            "startTime": "51.0",
+            "endTime": "73.0"
+        },
+        {
+            "pageIndex": 3,
+            "startTime": "73.1",
+            "endTime": "139.0"
+        },
+        {
+            "pageIndex": 4,
+            "startTime": "139.1",
+            "endTime": "174.0"
+        },
+        {
+            "pageIndex": 5,
+            "startTime": "174.1",
+            "endTime": "200.0"
+        },
+        {
+            "pageIndex": 6,
+            "startTime": "200.1",
+            "endTime": "225.0"
+        },
+        {
+            "pageIndex": 7,
+            "startTime": "225.1",
+            "endTime": "260.0"
+        },
+        {
+            "pageIndex": 8,
+            "startTime": "260.1",
+            "endTime": "299.0"
+        },
+        {
+            "pageIndex": 9,
+            "startTime": "299.1",
+            "endTime": "424.0"
+        },
+        {
+            "pageIndex": 10,
+            "startTime": "424.1",
+            "endTime": "497.0"
+        },
+        {
+            "pageIndex": 11,
+            "startTime": "498.1",
+            "endTime": "558.0"
+        }
+    ]
+}
