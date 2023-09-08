@@ -106,17 +106,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func goToNextPage(_ sender: Any) {
-
-        guard let currentTime = player?.currentTime().seconds.magnitude else {
-            return
-        }
-        updateCurrentPage(currentTime: currentTime)
-        currentPageIndex += 1
-        print("**********************current index \(currentPageIndex)")
-
         guard currentPageIndex < pages.count else {
             return
         }
+        currentPageIndex += 1
+        print("**********************current index \(currentPageIndex)")
+
         print("**********************next Index Start index \(pages[currentPageIndex].startTime) next Index end index \(pages[currentPageIndex].endTime)")
         let nextPageStartTime = isPlaying ? pages[currentPageIndex].startTime : pages[currentPageIndex].endTime
         print("**********************jumping to time\(nextPageStartTime)")
@@ -128,22 +123,38 @@ class ViewController: UIViewController {
     
     @IBAction func goToPreviousPage(_ sender: Any) {
         
-        guard currentPageIndex > 0, let currentTime = player?.currentTime().seconds else {
-            return
-        }
-        updateCurrentPage(currentTime: currentTime)
-        currentPageIndex -= 1
-        print("**********************current index \(currentPageIndex)")
         guard currentPageIndex > 0 else {
             return
         }
+        currentPageIndex -= 1
         
+        print("**********************current index \(currentPageIndex)")
         print("**********************next Index Start index \(pages[currentPageIndex].startTime) next Index end index \(pages[currentPageIndex].endTime)")
         let previousPageStartTime = isPlaying ? pages[currentPageIndex].startTime : pages[currentPageIndex].endTime
         print("**********************jumping to time\(previousPageStartTime)")
         print(previousPageStartTime)
         if let prePageTime = Double(previousPageStartTime) {
             seekToTime(TimeInterval(prePageTime), isForward: false)
+        }
+    }
+    
+    private func seekToTime(_ time: TimeInterval, isForward: Bool = true) {
+        print("seek to time jump \(time)")
+        player?.pause()
+        //        let cmTime = CMTimeMakeWithSeconds(time, preferredTimescale: 600) // 600 is a common timescale, you can adjust it
+        //        let advanceTime = CMTimeGetSeconds(cmTime).advanced(by: 0)
+        //        let seekTime = CMTime(value: CMTimeValue(advanceTime), timescale: 1)
+        
+        let playerTimescale = self.player?.currentItem?.asset.duration.timescale ?? 1
+        let time =  CMTime(seconds: time, preferredTimescale: playerTimescale)
+        self.player?.seek(to: time, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero) { [weak self] (finished) in /* Add your completion code here */
+            print("seek to time jump completed \(time) is completed \(finished)")
+            guard let self = self else { return }
+            if self.isPlaying {
+                self.player?.play()
+            } else {
+                
+            }
         }
     }
 }
@@ -175,10 +186,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController {
     
     private func setupPlayer(url: URL) {
-//        let asset = AVAsset(url: url)
-//        let playerItem = AVPlayerItem(asset: asset)
-//        player = AVPlayer(playerItem: playerItem)
-        
         player = AVPlayer(url: url)
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.videoGravity = .resize
@@ -198,8 +205,8 @@ extension ViewController {
             for (index, pageInfo) in pages.enumerated() {
                 if let starttime = Double(pageInfo.startTime), let endTime = Double(pageInfo.endTime)  {
                     if currentTime > starttime && currentTime < endTime  {
-//                        self.currentPageIndex = pageInfo.pageIndex
-//                        print("current Index inside update Progress \(pageInfo.pageIndex)")
+                        self.currentPageIndex = pageInfo.pageIndex
+                        print("current Index inside update Progress \(pageInfo.pageIndex)")
                         break
                     }
                 }
@@ -213,7 +220,6 @@ extension ViewController {
                 print("outside current time  \(currentTime) starttime \(starttime) endTime \(endTime)")
                 if currentTime >= starttime && currentTime <= endTime  {
                     print("inside current time  \(currentTime) starttime \(starttime) endTime \(endTime)")
-
                     self.currentPageIndex = pageInfo.pageIndex
                     print("current Index inside update Progress \(pageInfo.pageIndex)")
                     break
@@ -259,24 +265,7 @@ extension ViewController {
         
         downloadTask.resume()
     }
-    
-    private func seekToTime(_ time: TimeInterval, isForward: Bool = true) {
-        print("seek to time jump \(time)")
-        player?.pause()
-        let cmTime = CMTimeMakeWithSeconds(time, preferredTimescale: 600) // 600 is a common timescale, you can adjust it
-        let advanceTime = CMTimeGetSeconds(cmTime).advanced(by: 0)
-        let seekTime = CMTime(value: CMTimeValue(advanceTime), timescale: 1)
-        self.player?.seek(to: seekTime, completionHandler: { completed in
-//            if isForward {
-//                self.currentPageIndex += 1
-//            } else {
-//                self.currentPageIndex -= 1
-//            }
-//            self.player?.play()
-            print("seek to time jump completed \(time) is completed \(completed)")
-        })
-    }
-    
+        
     private func loadData() {
         if let viewModel = JSONLoader.loadVideoPlayerViewModel(fromJSONFile: "VideoJson") {
             // Use viewModel for your video player
