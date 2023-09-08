@@ -111,6 +111,9 @@ class ViewController: UIViewController {
         }
         currentPageIndex += 1
         print("**********************current index \(currentPageIndex)")
+        if currentPageIndex >= pages.count {
+            return
+        }
 
         print("**********************next Index Start index \(pages[currentPageIndex].startTime) next Index end index \(pages[currentPageIndex].endTime)")
         let nextPageStartTime = isPlaying ? pages[currentPageIndex].startTime : pages[currentPageIndex].endTime
@@ -141,10 +144,6 @@ class ViewController: UIViewController {
     private func seekToTime(_ time: TimeInterval, isForward: Bool = true) {
         print("seek to time jump \(time)")
         player?.pause()
-        //        let cmTime = CMTimeMakeWithSeconds(time, preferredTimescale: 600) // 600 is a common timescale, you can adjust it
-        //        let advanceTime = CMTimeGetSeconds(cmTime).advanced(by: 0)
-        //        let seekTime = CMTime(value: CMTimeValue(advanceTime), timescale: 1)
-        
         let playerTimescale = self.player?.currentItem?.asset.duration.timescale ?? 1
         let time =  CMTime(seconds: time, preferredTimescale: playerTimescale)
         self.player?.seek(to: time, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero) { [weak self] (finished) in /* Add your completion code here */
@@ -205,7 +204,9 @@ extension ViewController {
             for (index, pageInfo) in pages.enumerated() {
                 if let starttime = Double(pageInfo.startTime), let endTime = Double(pageInfo.endTime)  {
                     if currentTime > starttime && currentTime < endTime  {
-                        self.currentPageIndex = pageInfo.pageIndex
+                        if self.isPlaying {
+                            self.currentPageIndex = pageInfo.pageIndex
+                        }
                         print("current Index inside update Progress \(pageInfo.pageIndex)")
                         break
                     }
@@ -299,8 +300,44 @@ extension ViewController: PageInfoTableViewCellDelegate {
         guard let model = model else { return }
         if let index = videoPlayerViewModel?.pages.firstIndex(where: { $0.pageIndex == model.pageIndex }) {
             // Modify the 'PageData' at the found index.
+            guard  let startTime =  videoPlayerViewModel?.pages[index].startTime, let endTime = videoPlayerViewModel?.pages[index].endTime else { return }
+            if startTime ==  model.startTime && endTime == model.endTime {
+                let alertController = UIAlertController(
+                    title: "",
+                    message: "No changes detected",
+                    preferredStyle: .alert
+                )
+                
+                let okAction = UIAlertAction(
+                    title: "OK",
+                    style: .default,
+                    handler: nil
+                )
+                
+                alertController.addAction(okAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
             videoPlayerViewModel?.pages[index].startTime = model.startTime
             videoPlayerViewModel?.pages[index].endTime = model.endTime
+            
+            let alertController = UIAlertController(
+                title: "Value Changed",
+                message: "The value has been updated.",
+                preferredStyle: .alert
+            )
+            
+            let okAction = UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: nil
+            )
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
         }
     }
 }
