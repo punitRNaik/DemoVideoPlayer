@@ -48,6 +48,7 @@ class ViewController: UIViewController {
     private var isPlaying = false
     private var currentPageIndex = 0
     private var isFullScreen = false // Flag to track full-screen state
+    private var wasPlaying = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         player?.play()
         isPlaying = true
+        wasPlaying = true
         playPauseButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
     }
     
@@ -89,6 +91,7 @@ class ViewController: UIViewController {
         print("isPlaying\(isPlaying)")
         if isPlaying {
             player?.pause()
+            wasPlaying = true
             playPauseButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
         } else {
             player?.play()
@@ -109,7 +112,11 @@ class ViewController: UIViewController {
         guard currentPageIndex < pages.count else {
             return
         }
-        currentPageIndex += 1
+        if wasPlaying && !isPlaying{
+            wasPlaying = false
+        } else {
+            currentPageIndex += 1
+        }
         print("**********************current index \(currentPageIndex)")
         if currentPageIndex >= pages.count {
             return
@@ -129,7 +136,7 @@ class ViewController: UIViewController {
         guard currentPageIndex > 0 else {
             return
         }
-        currentPageIndex -= 1
+            currentPageIndex -= 1
         
         print("**********************current index \(currentPageIndex)")
         print("**********************next Index Start index \(pages[currentPageIndex].startTime) next Index end index \(pages[currentPageIndex].endTime)")
@@ -150,7 +157,8 @@ class ViewController: UIViewController {
             print("seek to time jump completed \(time) is completed \(finished)")
             guard let self = self else { return }
             if self.isPlaying {
-                self.player?.play()
+                player?.play()
+                self.wasPlaying = true
             } else {
                 
             }

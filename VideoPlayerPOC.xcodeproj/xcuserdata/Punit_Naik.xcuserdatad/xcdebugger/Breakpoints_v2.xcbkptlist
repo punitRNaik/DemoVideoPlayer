@@ -7,132 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FBEA65C3-00CE-4EC4-940C-E6126DB36FC4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "playerItemDidPlayToEndTime(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FBEA65C3-00CE-4EC4-940C-E6126DB36FC4 - 632cea631876a87f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayerPOC.VideoPlayerView.playerItemDidPlayToEndTime(Foundation.Notification) -&gt; ()"
-                  moduleName = "VideoPlayerPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Punit_Naik/Desktop/POC/VideoPlayerPOC/VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "332">
-               </Location>
-               <Location
-                  uuid = "FBEA65C3-00CE-4EC4-940C-E6126DB36FC4 - 632cea631876a87f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayerPOC.VideoPlayerView.playerItemDidPlayToEndTime(Foundation.Notification) -&gt; ()"
-                  moduleName = "VideoPlayerPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Punit_Naik/Desktop/POC/VideoPlayerPOC/VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "520">
-               </Location>
-               <Location
-                  uuid = "FBEA65C3-00CE-4EC4-940C-E6126DB36FC4 - 878b6fb00eb5fd8e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayerPOC.VideoPlayerView.playerItemDidPlayToEndTime(Foundation.Notification) -&gt; ()"
-                  moduleName = "VideoPlayerPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Punit_Naik/Desktop/POC/POC/VideoPlayerPOC/VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "520">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4AD1BEE6-BF8D-413F-8C85-60DBB9559A08"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "setupPlayer()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4AD1BEE6-BF8D-413F-8C85-60DBB9559A08 - b38ef2f628dae2d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayerPOC.VideoPlayerView.setupPlayer() -&gt; ()"
-                  moduleName = "VideoPlayerPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Punit_Naik/Desktop/POC/VideoPlayerPOC/VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "4AD1BEE6-BF8D-413F-8C85-60DBB9559A08 - b38ef2f628dae2f3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayerPOC.VideoPlayerView.setupPlayer() -&gt; ()"
-                  moduleName = "VideoPlayerPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Punit_Naik/Desktop/POC/VideoPlayerPOC/VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "4AD1BEE6-BF8D-413F-8C85-60DBB9559A08 - 572977253e19ae42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayerPOC.VideoPlayerView.setupPlayer() -&gt; ()"
-                  moduleName = "VideoPlayerPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Punit_Naik/Desktop/POC/POC/VideoPlayerPOC/VideoPlayerPOC/AnimationReaderVideoPlayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A9954714-202A-463D-991B-06E6A68069FB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -140,10 +14,74 @@
             filePath = "VideoPlayerPOC/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "downloadFile(from:completion:)"
-            landmarkType = "9">
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A9954714-202A-463D-991B-06E6A68069FB - 94c61ed310bc766f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in VideoPlayerPOC.ViewController.downloadFile(from: Foundation.URL, completion: (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VideoPlayerPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Punit_Naik/Desktop/POC/POC/VideoPlayerPOC/VideoPlayerPOC/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "1224">
+               </Location>
+               <Location
+                  uuid = "A9954714-202A-463D-991B-06E6A68069FB - 94c61ed310bc778c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in VideoPlayerPOC.ViewController.downloadFile(from: Foundation.URL, completion: (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VideoPlayerPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Punit_Naik/Desktop/POC/POC/VideoPlayerPOC/VideoPlayerPOC/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269"
+                  offsetFromSymbolStart = "1588">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5DB2108-7183-4BB0-92C4-C988396C8F1F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayerPOC/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "goToPreviousPage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "980CBE9D-28C3-4BC0-A59A-F88793EBC18C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayerPOC/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "goToNextPage(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
